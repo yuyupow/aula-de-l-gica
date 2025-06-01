@@ -1,11 +1,22 @@
 programa {
   funcao inicio() {
     inteiro num, resultado
-    escreva("escolha um número para ser fatorado \n")
+    cadeia validacao
+    
+    escreva("digite um número inteiro: ")
     leia(num)
-    para(inteiro i = 1; i < num; i++){
-      resultado = num * i
+
+    se (validacao == "zero") {
+     resultado = 1
+    } senao se (validacao == "negativo") {
+      escreva("escreva um número positivo")
+    } senao {
+      resultado = 1
+      enquanto (num > 1){
+        resultado = resultado * num
+        num = num - 1
+      }
+      escreva("o resultado do fatorial desejado é ", resultado)
     }
-    escreva(resultado)
   }
 }
